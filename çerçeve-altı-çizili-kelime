@@ -1,0 +1,8 @@
+"""Input ile kullanıcıdan bir kelime yazmasını isteyip, bu kelimeyi altı çizili ve etrafı desenli bir şekilde printleyin"""
+ülke=(input("lütfen yaşadığınız ülkeyi giriniz"))
+print("8 harfli ülkelere göre uyarlanmıştır:)")
+print(" *"*32,"\n","*"," "*59,"*","\n","|"," "*59,"|","\n","*",
+" "*59,"*","\n","|"," "*59,"|","\n","*",
+" "*23,ülke," "*26,"*","\n","|"," "*23,"-"*len(ülke)," "*26,
+"|","\n","*"," "*59,"*","\n","|"," "*59,"|","\n","*"," "*59,"*",
+"\n"," *"*31)
