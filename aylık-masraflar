@@ -1,0 +1,36 @@
+"""Aylik masraf programi"""
+print("aylık gelirinizin detaylı dökümüne ulaşmak için\n aşağıda sizden istenen bilgileri giriniz...")
+aylıkgelir=int(input("aylık gelirinizi giriniz="))
+mutfakgideri=int(input("aylık mutfak giderlerini giriniz="))
+egitimgideri=int(input("eğitim giderlerini giriniz="))
+giyimgideri=int(input("giyim giderlerini giriniz="))
+ulaşımgideri=int(input("ulaşım giderlerini giriniz="))
+toplamgider=mutfakgideri+egitimgideri+giyimgideri+ulaşımgideri
+print("giderlerinizin toplam tutarı=",toplamgider)
+mutfakyüzde=mutfakgideri*100/aylıkgelir
+print("mutfak giderlerinizin yüzdesi=",mutfakyüzde)
+egitimyüzde=egitimgideri*100/aylıkgelir
+print("eğitim giderlerinizin yüzdesi=",egitimyüzde)
+giyimyüzde=giyimgideri*100/aylıkgelir
+print("giyim giderlerinizin yüzdesi=",giyimyüzde)
+ulaşımyüzde=ulaşımgideri*100/aylıkgelir
+print("ulaşım giderinizin yüzdesi=",ulaşımyüzde)
+toplamyüzde=mutfakyüzde+egitimyüzde+giyimyüzde+ulaşımyüzde
+print("giderlerinizin toplam yüzdesi=",toplamyüzde)
+f=open("aylık_masraf.txt","w")
+print("aylık geliriniz=",aylıkgelir,file=f)
+print("aylık mutfak gideriniz=",mutfakgideri,file=f)
+print("aylık egitim gideriniz=",egitimgideri,file=f)
+print("aylık giyim gideriniz=",giyimgideri,file=f)
+print("aylık ulaşımgideriniz=",ulaşımgideri,file=f)
+print("giderlerinizin toplamı=",toplamgider,file=f)
+print("mutfak yüzdeniz=",mutfakyüzde,file=f)
+print("egitim yüzdeniz=",egitimyüzde,file=f)
+print("giyim yüzdeniz=",giyimyüzde,file=f)
+print("ulaşım yüzdeniz=",ulaşımyüzde,file=f)
+print("giderlerinizin toplam yüzdesi=",toplamyüzde,file=f)
+f.close()
+
+
+
+
