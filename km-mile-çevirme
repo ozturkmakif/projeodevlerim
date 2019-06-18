@@ -1,0 +1,4 @@
+"""Kullanıcıdan input ile km cinsinden mesafe bilgisi alıp, bu bilgiyi mile dönüştürün ve sonucu ekrana printleyin."""
+mesafe=int(input("mile dönüştürmek istediğiniz mesafenin km uzaklığını giriniz="))
+mil=mesafe*0.62137
+print(mesafe,"km",mil,"mil yapmaktadır.")
