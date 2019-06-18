@@ -1,0 +1,21 @@
+"""Faiz hesaplama programi"""
+anapara=int(input("anapara miktarını giriniz="))
+faizsüresi=int(input("faiz süresini giriniz="))
+faizoranı=float(input("faiz oranını giriniz"))
+tfaiztutarı=anapara*faizsüresi*faizoranı/100
+print("toplam faiz tutarınız=",tfaiztutarı)
+aylıkfaiz=tfaiztutarı/faizsüresi
+print("aylık faiz tutarı=",aylıkfaiz)
+günlükfaiz=aylıkfaiz/30
+print("günlük faiz=",günlükfaiz)
+toplampara=anapara+tfaiztutarı
+print("toplam ödenecek miktar=",toplampara)
+f=open("faiz_hesaplama.txt","w")
+print("ana para=",anapara,file=f)
+print("faiz süresi=",faizsüresi,file=f)
+print("faiz oranı=",faizoranı,file=f)
+print("toplam faiz tutarı=",tfaiztutarı,file=f)
+print("aylık faiz tutarı=",aylıkfaiz,file=f)
+print("günlük faiz tutarı=",günlükfaiz,file=f)
+print("toplam para=",toplampara,file=f)
+f.close()
