@@ -1,0 +1,21 @@
+"""Oğrenci not ortalama programi"""
+print("öğrenci not ortalaması hesaplama programı")
+ad_soyad=input("adınızı ve soyadınızı giriniz=")
+vize=int(input("vize notunuzu giriniz="))
+final=int(input("final notunuzu giriniz="))
+derstoplamı=int(input("almış olduğunuz ders sayısını giriniz="))
+svize=vize*30/100
+sfinal=final*50/100
+sderstoplam=5*derstoplamı*20/100
+genelortalama=svize+sfinal+sderstoplam
+print("almış olduğunuz genel not ortalaması=",genelortalama,)
+f=open("ögrenci_not_hesaplaması.txt","w")
+print("ad soyad=",ad_soyad,file=f)
+print("vize notu=",vize,file=f)
+print("final notu=",final,file=f)
+print("toplam girilen ders=",derstoplamı,file=f)
+print("vizeniz=",svize,file=f)
+print("finaliniz=",sfinal,file=f)
+print("ders toplam puan=",sderstoplam,file=f)
+print("genel ortalamanız=",genelortalama,file=f)
+f.close()
