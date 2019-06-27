@@ -1,0 +1,131 @@
+""" Kullanicidan dogum gununu ve ayini isteyin, program hangi burc oldugunu soylesin."""
+print("hangi burç olduğunuzu öğrenmek için bilgilerinizi giriniz...")
+dgünü=int(input("lütfen sadece doğduğunuz günün tarihini giriniz:"))
+day=input("lütfen doğduğunuz ayı giriniz:")
+a=["ocak","şubat","mart","nisan","mayıs","haziran",
+   "temmuz","ağustos","eylül","ekim","kasım","aralık"]
+if 22<=dgünü<=31 and day==a[11] or 21>=dgünü>=1 and day==a[0]:
+    print("burcunuz: oğlak")
+elif 22<=dgünü<=31 and day==a[0] or 19>=dgünü>=1 and day==a[1]:
+    print("burcunuz: kova")
+elif 20<=dgünü<=29 and day==a[1] or 20>=dgünü>=1 and day==a[2]:
+    print("burcunuz: balık")
+elif 21<=dgünü<31 and day==a[2] or 20>=dgünü>=1 and day==a[3]:
+    print("burcunuz: koç")
+elif 21<=dgünü<=30 and day==a[3] or 21>=dgünü>=1 and day==a[4]:
+    print("burcunuz: boğa")
+elif 22<=dgünü<=31 and day==a[4] or 22>=dgünü>=1 and day==a[5]:
+    print("burcunuz: ikizler")
+elif 23<=dgünü<=30 and day==a[5] or 22>=dgünü>=1 and day==a[6]:
+    print("burcunuz: yengeç")
+elif 23<=dgünü<=31 and day==a[6] or 22>=dgünü>=1 and day==a[7]:
+    print("burcunuz: aslan")
+elif 23<=dgünü<=31 and day==a[7] or 22>=dgünü>=1 and day==a[8]:
+    print("burcunuz: başak")
+elif 23<=dgünü<=30 and day==a[8] or 22>=dgünü>=1 and day==a[9]:
+    print("burcunuz: terazi")
+elif 23<=dgünü<=31 and day==a[9] or 21>=dgünü>=1 and day==a[10]:
+    print("burcunuz: akrep")
+elif 22<=dgünü<=30 and day==a[10] or 21>=dgünü>=1 and day==a[11]:
+    print("burcunuz: yay")
+else:
+    print("lütfen bilgilerinizi doğru giriniz...")
+"""UZAKLIK BIRIMI DONUSUMU"""
+hesap=("""
+(1) km-mil hesabı
+(2) mil-km hesabı
+""")
+print(hesap)
+yazıcı=1
+while yazıcı==1:
+    soru=input("yapmak istediğiniz işlemin numarasını giriniz=(çıkmak için q)")
+    if soru=="q":
+        print("sistemden çıkılıyor...")
+        yazıcı=0
+    elif soru=="1":
+        km=int(input("km'yi mile dönüştürmek için mesafeyi giriniz=."))
+        print(km,"=",km*0.62137,"mil yapmaktadır.")
+    elif soru=="2":
+        mil=int(input("mil'i km' ye dönüştürmek için mesafeyi giriniz="))
+        print(mil,"=",mil/0.62137,"km yapmaktadır.")
+    elif soru=="3":
+        çıkış=input("çıkış yapmak istiyorsanız q 'ye basınız...")
+        print(çıkış,"programdan çıkıyorsunuz...")
+        
+"""PAROLA KARAKTER KONTROLU"""
+while True:
+    kadı=input("3-18 karakter aralığında kullanıcı adı giriniz:")
+    if len(kadı)>18 or len(kadı)<3:
+        print("lütfen istenen karakter aralığında kullanıcı adı giriniz.")
+    elif ("0" in kadı) or ("1" in kadı) or ("2" in kadı) or ("3" in kadı) or ("4" in kadı) or ("5" in kadı) or ("6" in kadı) or ("7" in kadı) or ("8" in kadı) or ("9" in kadı):
+        print("lütfen rakam kullanmayınız")
+    elif len(kadı)<=18 and len(kadı)>=3:
+        print("kullanıcı adınız",kadı)
+        break
+while True:
+    parola=input("lütfen6-12 karakter uzunluğunda parola giriniz")
+    if len(parola)>12 or len(parola)<6:
+        print("lütfen istenen karakter aralığında parola giriniz")
+    elif len(parola)<=12 and len(parola)>=6:
+        print("parolanız",parola)
+        break
+f=open("giriş_bilgi.txt","w")
+print("kullanıcı adı:",kadı,"\nparola:",parola,file=f)
+f.close()
+
+""" SAYI TAHMIN OYUNU"""
+dhakkı=5
+sayı=6
+while dhakkı>0:
+    tahmin=int(input("lütfen 1 ile 10 arasında bir sayı giriniz"))
+    if tahmin!=sayı:
+        dhakkı=dhakkı-1
+        print("bilemediniz kalan tahmin hakkınız{}".format(dhakkı))
+    elif tahmin==sayı:
+        if dhakkı==5:
+            print("tebrikler *** kazandınız")
+            break
+        elif dhakkı==4 or dhakkı==3:
+            print("tebrikler ** kazandınız")
+            break
+        elif dhakkı==2 or dhakkı==1:
+            print("tebrikler * kazandınız")
+            break
+"""ATM"""
+kullanıcı_bakiye=1000
+menü=("""
+(1) bakiye kontrolü
+(2) para yatırma
+(3) para çekme
+(4) çıkış
+""")
+print(menü)
+soru=input("yapmak isyediğiniz işlemin numarasını giriniz=")
+akif=1
+while akif==1:
+    if soru=="1":
+        print("bakiyenizde=",kullanıcı_bakiye,"£ bulunmaktadır.")
+        soru=input("yapmak istediğiniz işlemin numarasını giriniz=")
+    elif soru=="2":
+        pyatırma=int(input("lütfen yatırmak istediğiniz tutarı giriniz="))
+        kullanıcı_bakiye=kullanıcı_bakiye+pyatırma
+        print("para hesabınıza yatırılmıştır.mevcut bakiyeniz=",kullanıcı_bakiye)
+        soru=input("yapmak isyediğiniz işlemin numarasını giriniz=")
+    elif soru=="3":
+        pçekme=int(input("lütfen çekmek istediğiniz tutarı giriniz"))
+        if pçekme>kullanıcı_bakiye:
+            print("bakiyenizde bulunan miktardan fazla para çekemezsiniz.")
+            soru=input("yapmak isyediğiniz işlemin numarasını giriniz=")
+        else:
+            kullanıcı_bakiye=kullanıcı_bakiye-pçekme
+            print("mevcut bakiyeniz=",kullanıcı_bakiye)
+            soru=input("yapmak isyediğiniz işlemin numarasını giriniz=")
+    elif soru==4:
+        print("bizi seçtiğiniz için teşekkür ederiz lütfen kartınızı almayı unutmayı iyi günler.")
+        akif==2
+    else:
+        print("lütfen menüde bulunan işlemleri seçiniz")
+        soru=input("yapmak isyediğiniz işlemin numarasını giriniz=")
+    
+
+   
