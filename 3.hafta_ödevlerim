@@ -1,0 +1,178 @@
+"""1.ODEV: HESAP OLUSTURMA"""
+print("lütfen hesap oluşturmak için kendinize kullanıcı adı ve parola belirleyiniz:")
+k_adı=input("kullanıcı adı giriniz:")
+şifre=input("parola giriniz:")
+dosya=open("C:/python ödevleri/parola.txt","a")
+dosya.write(k_adı)
+dosya.close()
+for i in dosya:
+    if k_adı in dosya:
+        print("bu isim daha önce girilmiş lütfen kullanılmayan isim giriniz")
+        
+"""2.ODEV: SAYI TAHMIN OYUNU"""
+print("sayı tahmin oyununa hoş geldiniz...")
+sayı=77
+sefer=0
+try:
+    while sefer<=100:
+        tahmin=int(input("lütfen 0 ile 100 arasında bir sayı tahmin ediniz:"))
+        sefer+=1
+        fark=sayı-tahmin
+        tfark=tahmin-sayı
+        if sayı!=tahmin:
+            if fark>0:
+                if 0<fark<10:
+                    print("çok yaklaştın biraz daha çıkmalısın")
+                    continue
+                elif 10<fark<30:
+                    print("daha yüksek bir sayı girmelisin")
+                    continue
+                elif 30<fark<70:
+                    print("çok daha yüksek bir sayı girmelisin")
+                    continue
+                else:
+                    print("arada dağlar kadar fark var çok çıkmalısın")
+                    continue
+            if tfark>0:
+                if 0<tfark<10:
+                    print("çok yaklaştın biraz daha inmelisin")
+                    continue
+                elif 10<tfark<30:
+                    print("daha düşük bir sayı girmelisin")
+                    continue
+                elif 30<tfark<70:
+                    print("çok daha düşük bir sayı girmelisin")
+                    continue
+                else:
+                    print("arada dağlar kadar fark var çok inmrlisin")
+                    continue
+        if sayı==tahmin:
+            print("tebrikler sayıyı {}. denemede bildiniz".format(sefer))
+            break
+except:
+    print("hatalı giriş yaptınız")
+
+
+        
+"""3.ODEV: LISTE AYIKLAMA"""
+
+with open("futbolcular.txt","r+",encoding="utf-8")as futbolcular:
+    a = futbolcular.readlines()
+
+    for i in a:
+        de=i.split(",")
+        print(de)
+        if "Galatasaray\n" in de:
+            with open("galatasaray.txt", "a",encoding="utf-8")as gs:
+                gs.write(de[0]+"\n")
+                gs.close()
+        elif "Fenerbahçe\n" in de:
+
+            with open("fenerbahçe.txt", "a",encoding="utf-8")as fb:
+                fb.write(de[0]+"\n")
+                fb.close()
+
+        elif "Beşiktaş\n" in de:
+            with open("beşiktaş.txt", "a",encoding="utf-8")as bjk:
+                bjk.write(de[0]+"\n")
+                bjk.close()
+
+
+"""4.ODEV: ALAN-HACIM HESAPLAMA"""
+try:
+    while True:
+        print("""***alan hacim hesaplama programına hoş geldiniz***
+        (1) alan işlemleri
+        (2) hacim işlemleri
+        (3) çıkış""")
+        işlem=input("lütfen hesap yapmak istediğiniz işlemi seçiniz:")
+        if işlem=="1":
+            print("""***alan işlemleri***
+            (a) kare
+            (b) ucgen
+            (c) dıkdortgen
+            """)
+            hesap=input("lütfen alanını hesaplamak istediğiniz işlemi seçiniz:")
+            if hesap=="a":
+                kenar=int(input("alanını hesaplamak istediğinşiz karenin bir kenar uzunluğunu giriniz:"))
+                karealanı=kenar*kenar
+                print("karenin alanı:",karealanı)
+        
+    
+            elif hesap=="b":
+                kenar=int(input("hesaplamak istediğiniz üçgenin kenar uzunluğunu giriniz:"))
+                yukseklik=int(input("hesaplamk istediğiniz üçgenin yüksekliğini giriniz:"))
+                ucgenalanı=kenar*yukseklik/2
+                print("üçgenin alanı:",ucgenalanı)
+        
+            elif hesap=="c":
+                kısakenar=int(input("hesaplamak istediğiniz dikdörtgenin kısa kenar uzunluğunu giriniz:"))
+                uzunkenar=int(input("hesaplamak istediğiniz dikdörtgenin uzun kenar uzunluğunu giriniz:"))
+                dikdortgenalanı=uzunkenar*kısakenar
+                print("dikdörtgenin alanı:",dikdortgenalanı)
+            else:
+                print("yanlış giriş yaptınız...")
+                hesap=input("lütfen alanını hesaplamak istediğiniz işlemi seçiniz:")
+
+        elif işlem=="2":
+            print("""***hacim işlemleri***
+            (a) küp
+            (b) kure
+            (c) koni
+            """)
+            hesap=input("lütfen hacimini hesaplamak istediğiniz işlemi seçiniz:")
+            if hesap=="a":
+                küpkenar=int(input("küpün bir kenar uzunluğunu giriniz"))
+                küphacim=küpkenar**3
+                print("küpün hacmi:",küphacim)
+            elif hesap=="b":
+                yarıcap=float(input("hesaplamak istediğiniz kürenin yarı çapını giriniz:"))
+                kurehacim=4*3.14*(yarıcap**3)/3
+                print("kürenin hacmi:",kurehacim)
+            elif hesap=="c":
+                yarıcap=int(input("hesaplamak istediğiniz koninin yarı çapını giriniz:"))
+                yükseklik=int(input("hesaplamak istediğiniz koninin yüksekliğini giriniz:"))
+                konihacim=(1/3)*3.14*(yarıcap**2)*yükseklik
+                print("koninin hacmi:",konihacim)
+            else:
+                print("yanlış giriş yaptınız...")
+                hesap=input("lütfen hacimini hesaplamak istediğiniz işlemi seçiniz:")
+        elif işlem=="3":
+            print("çıkış yaptınız...")
+            break
+except:
+    print("hatalı giriş yaptınız...")
+        
+
+        
+        
+        
+        
+         
+"""5.ODEV: FIZZ BUZZ"""
+for i in range(1,100):
+    if i%3==0 and i%5==0:
+        print("FIZZBUZZ")
+    elif i%3==0:
+        print("FIZZ")
+    elif i%5==0:
+        print("BUZZ")
+    
+    else:
+        print(i)
+        
+        
+        
+        
+        
+"""6.ODEV: ASAL SAYI MI?"""
+değer=0
+sayi=input("sayı giriniz:")
+for i in range(2,int(sayi)):
+      if(int(sayi)%i==0):
+            değer+=1
+            break
+if(değer!=0):
+      print(sayi,"Sayısı Asal Değildir.")
+else:
+      print(sayi,"Sayısı Asal sayıdır.")
