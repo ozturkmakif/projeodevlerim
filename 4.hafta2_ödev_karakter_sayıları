@@ -1,0 +1,27 @@
+""" Kullanıcıdan bir input aldık. Girmiş olduğumuz inputta büyük harf sayısı, küçük harf sayısı, rakam sayısı ve bunların haricindeki
+özel karakter sayılarını veren bir program yazdık """
+
+bharf="QWERTYUIOPĞÜASDFGHJKLŞİZXCVBNMÖÇ"
+kharf="qwertyuıopğüasdfghjklşizxcvbnmöç"
+rakam="0123456789"
+büyükler = ""
+küçükler = ""
+rakamlar = ""
+karakterler = ""
+
+cümle=input("bir cümle yazınız:")
+
+for i in cümle:
+    if i in bharf:
+        büyükler += i
+    elif i in kharf:
+        küçükler += i
+    elif i in rakam:
+        rakamlar += i
+    else:
+        karakterler += i
+
+print("""cümlenin içerisinde {} adet büyük harf,{} adet küçük harf,
+{} adet rakam, {} adet karakter vardır.
+""".format(len(büyükler),len(küçükler),len(rakamlar),len(karakterler)))
+
