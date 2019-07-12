@@ -1,0 +1,5 @@
+"" "küçük harfleribüyük harfe çevirme kodları" "
+while True:
+    kelime=input("yaşadığınız ülkeyi giriniz:")
+    yeni=kelime.upper()
+    print(yeni)
