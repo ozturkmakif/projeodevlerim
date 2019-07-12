@@ -1,0 +1,13 @@
+
+futbol=open("C:/python ödevleri/futbolcularr.txt","r")
+a=futbol.read()
+yeni=open("C:/python ödevleri/yenifutbol.txt","w")
+tk="şçöğüıŞÇÖĞÜİ"
+tok="scoguiSCOGUI"
+
+çeviri_tablosu= str.maketrans(tk,tok)
+
+
+print(a.translate(çeviri_tablosu))
+yeni.write(a.translate(çeviri_tablosu))
+yeni.close()
