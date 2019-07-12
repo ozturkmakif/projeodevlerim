@@ -1,0 +1,14 @@
+""")Futbolcular dosyasındaki futbolculardan ismi sesli harf
+ile başlayanları ayrı bir dosyaya yazdırma kodları"""
+
+sesli="euıoüiaöAEUIÜİÖ"
+dosya=open("C:/python ödevleri/futbolcularr.txt","r")
+a=dosya.readlines()
+topcular=open("C:/python ödevleri/topcular.txt","w")
+for i in a:
+    if i[0] in sesli:
+        topcular.write(i)
+     
+        
+topcular.close() 
+dosya.close()
