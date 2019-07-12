@@ -1,0 +1,16 @@
+"""Kullanıcıdan input ile veri alınıp. Girmiş olduğu inputtaki rakamların toplamını veren yazılım kodları.
+ (Kullanıcı rakam girmek zorunda değil.farklı karakter girişi ile de denenebilir.)"""
+
+bilgi=input("yazılıcak bilgiyi giriniz:")
+rakamlar="1234567890"
+sayilar=[]
+sonuc=0
+for i in bilgi:
+    if i in rakamlar:
+        sayilar.append(i)
+
+
+for a in sayilar:
+    if a.isdigit()==True:
+        sonuc+=int(a)
+print("yazılan metinde ki rakamların toplamı: {} yapmaktadır.".format(sonuc))
