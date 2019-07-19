@@ -1,0 +1,34 @@
+"""sayı tahmini"""
+sayı="2389"
+pozitif=0
+negatif=0
+while True:
+    tahmin=input("sayı giriniz:")
+    if sayı==tahmin:
+        print("tebrikler bildiniz")
+        break
+    elif len(tahmin)!=4:
+        print("lütfen 4 basamaklı bir sayı giriniz")
+        continue
+    elif "0" in tahmin:
+        print("lütfen 0 içermeyen bir sayı giriniz")
+        continue
+    for i in range(len(tahmin)):
+        if tahmin[i] in tahmin[0:i]:
+            print("sayinin  rakamlari farkli olmali")
+            continue
+    
+    
+
+    for i in sayı:
+        for a in tahmin:
+            if i == a and sayı.index(i) == tahmin.index(a):
+                pozitif+=1
+            elif i == a and sayı.index(i) != tahmin.index(a):
+                negatif+=-1
+            
+                
+            
+print(" tahmin edilen sayı: {} \ veriler:{} , {}".format(tahmin,pozitif,negatif))
+pozitif=0
+negatif=0
