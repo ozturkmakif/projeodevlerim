@@ -1,0 +1,107 @@
+"""adam asmaca oyunu"""
+resim = ["""
+   +---+
+   |   |
+       |
+       |
+       |
+       |
+--------""","""
+   +---+
+   |   |
+   O   |
+       |
+       |
+       |
+--------""","""
+   +---+
+   |   |
+   O   |
+   |   |
+       |
+       |
+--------""","""
+   +---+
+   |   |
+   O   |
+  /|   |
+       |
+       |
+--------""","""
+   +---+
+   |   |
+   O   |
+  /|  |
+       |
+       |
+--------""","""
+   +---+
+   |   |
+   O   |
+  /|  |
+  /    |
+       |
+--------""","""
+   +---+
+   |   |
+   O   |
+  /|  |
+  /   |
+       |
+--------"""]
+kelime="kamil"
+liste=["_","_","_","_","_"]
+sayac=6
+adim=0
+
+while True:
+    print("***adam asmaca oyununa hoş geldiniz***")
+    
+
+    while True:
+        if liste==["k","a","m","i","l"]:
+            print("tebrikler kazandınız")
+            break
+        print(resim[adim])
+
+        tahmin=input("lütfen bir harf giriniz:")
+        
+        
+        if "k"==tahmin:
+            liste.pop(0)
+            liste.insert(0,"k")
+            print(liste)
+    
+        elif "a"==tahmin:
+            liste.pop(1)
+            liste.insert(1,"a")
+            print(liste)
+        elif "m"==tahmin:
+            liste.pop(2)
+            liste.insert(2,"m")
+            print(liste)
+        elif "i"==tahmin:
+            liste.pop(3)
+            liste.insert(3,"i")
+            print(liste)
+        elif "l"==tahmin:
+            liste.pop(4)
+            liste.insert(4,"l")
+            print(liste)
+        elif tahmin in "1234567890":
+            print("yanlıs girdiniz lütfen harf giriniz")
+        elif len(tahmin)!=len("q"):
+            print("lütfen sadece bir harf giriniz")
+
+       
+        else:
+            sayac-=1
+            if sayac==0:
+                print("Allah rahmet eylesin...")
+                break
+            adim+=1
+            print("{} hakkınız kaldı.".format(sayac))
+
+    break
+    
+    
