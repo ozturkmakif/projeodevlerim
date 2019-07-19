@@ -1,0 +1,16 @@
+""" liste tanımlama"""
+sayılar="123456789"
+a=list(sayılar)
+harfler="abcdefghj"
+b=list(harfler)
+liste = []
+liste2 = []
+
+for i in a:
+    for e in b:
+        liste+=[str(i)+e]
+        liste2+=[e+str(i)]
+
+print(liste)
+print(liste2)
+
